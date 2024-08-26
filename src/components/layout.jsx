@@ -8,9 +8,10 @@ function Layout() {
       </div> 
       <div className="text">
         <title className='text-title'>Quien Soy </title>
-        <p>Soy una persona autodidacta que se especializa en tener soluciones para necesidad 
+        <p>
+          Soy una persona autodidacta que se especializa en tener soluciones para necesidad 
           de cada persona,me encanta apreder con desafios que puedan apliar mi conocimiento 
-          y poder tener un mejor desarrollo.
+          y poder tener un mejor desarrollo tanto como individualmente como trabajo en equipo.
         </p>
       </div>
     </div>
