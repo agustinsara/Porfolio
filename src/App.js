@@ -1,13 +1,15 @@
-import './App.css';
+import './index.css'
 import Layout from '../src/components/layout.jsx';
 import Navbar from '../src/components/navbar.jsx';
-
+import styles from '../src/styles/styles.css';
 function App() {
   return (
-    <div className="App">
-       <Navbar></Navbar>
+  <div>
+      <Navbar></Navbar>
+    <div className="body">
       <Layout></Layout>
     </div>
+  </div>
   );
 }
 
