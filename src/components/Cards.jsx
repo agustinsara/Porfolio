@@ -1,6 +1,27 @@
-import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { collection, getDocs } from "firebase/firestore";
+import { db } from '../config-firebase.js';
+import React, { useEffect, useState } from 'react';
+
+
+ const getCardsData = async () => {
+    const cardsCollection = collection(db, "proyect");
+    const cardsSnapshot = await getDocs(cardsCollection);
+    const cardsList = cardsSnapshot.docs.map(doc => doc.data());
+    return cardsList;
+    console.log(cardsList);
+  };
+  
+  const [cardsdata,setCardsData] = useState([]);
+  
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getCardsData();
+      setCardsData(data);  
+    };
+    fetchData();
+  }, []);
 
 function Cards() {
   return (
