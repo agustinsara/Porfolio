@@ -10,7 +10,9 @@ function Proyects() {
        <div className="photos">
             <img src={photoJavascript} width={200}></img>
             <img src={photoReact} width={250}/>
+          
         </div>
+        <Cards></Cards>
     </div>
   )
 }
