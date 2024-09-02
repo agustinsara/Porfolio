@@ -5,9 +5,7 @@ import styles from '../src/styles/styles.css';
 function App() {
   return (
   <div>
-      <Navbar></Navbar>
     <div className="body">
-      <Layout></Layout>
     </div>
   </div>
   );

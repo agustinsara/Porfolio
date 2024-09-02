@@ -2,20 +2,23 @@ import React from 'react'
 import styles from "../styles/styles.css";
 import  {  TypeAnimation  }  from  'react-type-animation' ;
 import Proyects from './proyects';
+import Navbaar from '../components/navbar.jsx';
 
 
 function Layout() {
   return (
-  <div className='content'>
+
+    <div className='content'>
+
     <div className="content-body">
       <div className='boxOne'>
          <TypeAnimation
          sequence={[
           "Said Agustin Sara Web" ,1000,
-          "Said Agustin Sara We",1000,
+          "Said Agustin Sara ",1000,
           ]}
           wrapper="h1"
-          speed={50}
+          speed={90}
           repeat={Infinity}
           />
           <h1 className='text-title'>Quien Soy :</h1>
@@ -28,7 +31,8 @@ function Layout() {
       </div> 
     </div> 
      <Proyects></Proyects>
-  </div>
+     </div>
+  
   )
 }
 

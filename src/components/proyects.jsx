@@ -3,6 +3,7 @@ import photoReact from '../assets/React.png';
 import photoJavascript from '../assets/javaScript.png';
 import styles from "../styles/styles.css";
 import Cards from './Cards';
+import ExtraccionData from "../Hook/extraccionData.js"
 function Proyects() {
   return (
     <div className='proyects-content'>
@@ -12,7 +13,7 @@ function Proyects() {
             <img src={photoReact} width={250}/>
           
         </div>
-        <Cards></Cards>
+        <ExtraccionData></ExtraccionData>
     </div>
   )
 }

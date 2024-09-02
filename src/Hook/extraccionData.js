@@ -17,6 +17,7 @@ const ExtraccionData = () => {
         const fetchData = async () => {
             const data = await getCardsData();
             setCardsData(data);
+            console.log("tu vieja va decir algo" , data)
         };
         fetchData();
     }, []);
@@ -25,8 +26,8 @@ const ExtraccionData = () => {
         <div className="row">
             {cardsData.map((cardData) => (
                 <Cards 
-                    key={id} 
-                    description={cardData.descripcion} 
+                    key={cardData.id} 
+                    descripcion={cardData.descripcion} 
                     title={cardData.title} 
                 />
             ))}
