@@ -1,7 +1,7 @@
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../config-firebase.js";
 import React, { useEffect, useState } from 'react';
-import Cards from "../components/Cards";
+import Card from "../components/Card.jsx";
 
 const getCardsData = async () => {
     const cardsCollection = collection(db, "proyects");
@@ -25,7 +25,7 @@ const ExtraccionData = () => {
     return (
         <div className="row">
             {cardsData.map((cardData) => (
-                <Cards 
+                <Card 
                     key={cardData.id} 
                     descripcion={cardData.descripcion} 
                     title={cardData.title} 

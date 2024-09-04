@@ -2,7 +2,6 @@ import React from 'react';
 import photoReact from '../assets/React.png';
 import photoJavascript from '../assets/javaScript.png';
 import styles from "../styles/styles.css";
-import Cards from './Cards';
 import ExtraccionData from "../Hook/extraccionData.js"
 function Proyects() {
   return (
