@@ -2,6 +2,9 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
+import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { v4 as uuidv4 } from 'uuid';
+
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -14,9 +17,15 @@ const firebaseConfig = {
   measurementId: "G-HQKZX90RZW"
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
-// Export the instance of Firestore
+export const storage = getStorage(app); // Define storage aquí
+export const firestore = getFirestore(app);
+
+
+// Exporta la instancia de Firestore
 export const db = getFirestore(app);
+
+// Aquí ya no necesitas volver a exportar 'storage', ya lo has hecho
+export { uuidv4,  ref, uploadBytes, getDownloadURL };

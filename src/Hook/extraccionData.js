@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Card from "../components/Card.jsx";
 
 const getCardsData = async () => {
-    const cardsCollection = collection(db, "proyects");
+    const cardsCollection = collection(db, "projects");
     const cardsSnapshot = await getDocs(cardsCollection);
     const cardsList = cardsSnapshot.docs.map(doc => doc.data());
     return cardsList;
@@ -30,6 +30,7 @@ const ExtraccionData = () => {
                     descripcion={cardData.descripcion} 
                     title={cardData.title} 
                     link={cardData.link}
+                    image={cardData.image}
                 />
             ))}
         </div>

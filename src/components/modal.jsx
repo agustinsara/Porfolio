@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { collection, setDoc, doc } from "firebase/firestore"; 
-import { db } from "../config-firebase.js";
+import { db, uuidv4, storage, ref, uploadBytes, getDownloadURL } from "../config-firebase.js";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
@@ -19,16 +19,32 @@ function Moodal() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const handleImageChange = async (e) => {
+    e.preventDefault();
+    const newImage = e.target.files[0];
+    if (newImage) {
+      const storageRef = ref(storage, uuidv4());
+      await uploadBytes(storageRef, newImage);
+      const imageUrl = await getDownloadURL(storageRef);
+      setProjectData({
+        ...projectData,
+        image: [...projectData.image, imageUrl]
+      });
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { title, descripcion, link } = projectData;
-    const coleccionRef = collection(db, "proyects");
-    await setDoc(doc(coleccionRef), { title , descripcion, link });
+    const { title, descripcion, link, image } = projectData;
+    const coleccionRef = collection(db, "projects");
+    await setDoc(doc(coleccionRef), { title, descripcion, link, image });
     alert("Proyecto publicado");
     setProjectData({
       title: '',
       descripcion: '',
       link: '',
+      image: [],
+      technology: [] 
     });
   };
 
@@ -68,7 +84,7 @@ function Moodal() {
           <Form.Group controlId="formFile" className="mb-3">
             <Form.Label></Form.Label>
             <div className="d-flex">
-              <Form.Control type="file" style={{ display: 'none' }} id="upload" />
+              <Form.Control type="file" style={{ display: 'none' }} id="upload" onChange={handleImageChange} />
               <Button as="label" htmlFor="upload" variant="dark">
                 Cargar Imagen
               </Button>
