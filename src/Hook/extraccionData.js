@@ -29,6 +29,7 @@ const ExtraccionData = () => {
                     key={cardData.id} 
                     descripcion={cardData.descripcion} 
                     title={cardData.title} 
+                    link={cardData.link}
                 />
             ))}
         </div>

@@ -11,7 +11,7 @@ import Card from 'react-bootstrap/Card';
                     <Card.Text>
                         {props.descripcion}
                     </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
+                <Button variant="primary" href={props.link}>Go? o no Go?</Button>
             </Card.Body>
   </Card>
   </div>
