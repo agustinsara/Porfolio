@@ -5,7 +5,6 @@ function Cards(props) {
   return (
     <div>  
       <Card style={{ width: '18rem' }}>
-        {/* Aquí pasamos el src de la imagen */}
         <Card.Img variant="top" src={props.image} alt="Project Image" />
         <Card.Body>
           <Card.Title>{props.title}</Card.Title>
