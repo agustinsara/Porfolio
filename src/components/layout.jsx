@@ -2,8 +2,8 @@ import React from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import Proyects from './proyects';
 import Navbaar from '../components/navbar.jsx';
-import '../styles/styles.css'; // Asegúrate de que el archivo CSS esté importado
-import ContactForm from './ContactForm.jsx';
+import '../styles/styles.css'; 
+
 
 function Layout() {
   return (
@@ -32,9 +32,8 @@ function Layout() {
         </div>
       </div>
 
+       <Proyects />
       
-      <Proyects />
-      <ContactForm/>
     </div>
   );
 }
