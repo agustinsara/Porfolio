@@ -16,7 +16,7 @@ function Cards(props) {
                 <Card.Text>
                   {card.descripcion}
                 </Card.Text>
-                <Button variant="primary" href={card.link}>Go? o no Go?</Button>
+                <Button variant="primary" href={card.link}>Ir al Repo</Button>
               </Card.Body>
             </Card>
         </div>

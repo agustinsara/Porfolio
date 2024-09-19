@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Modal from 'react-bootstrap/Modal';
-
+import { TypeAnimation } from 'react-type-animation';
 
 function Moodal() {
   const [show, setShow] = useState(false);
@@ -20,14 +20,15 @@ function Moodal() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const handleSelectTechnology = (e) => {
-    const selectoption= e.target.value;
+  /* const handleSelectTechnology = (e) => {
+    const selectoption= e.target.checked;
+    console.log("esto esta selecionando" , selectoption)
     setProjectData((prevState) => ({
       ...prevState,
       technology: [...prevState.technology, selectoption]
     }));
     console.log("Tecnología seleccionada:", selectoption);
-  };
+  }; */
 
   
   const handleImageChange = async (e) => {
@@ -68,15 +69,51 @@ function Moodal() {
 
       <Modal show={show} onHide={handleClose} backdrop="static" animation={false}>
         <Modal.Header closeButton>
-          <Modal.Title>Carga de Proyectos</Modal.Title>
+          <Modal.Title>
+          <TypeAnimation
+            sequence={[
+              "Carga de Proyectos",
+              1000, 
+              "Cargando......",
+              1000, 
+              "C.....", 
+              1000,
+            ]}
+            wrapper="h1" 
+            speed={10} 
+            repeat={Infinity} 
+          />
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <InputGroup className="mb-3 d-flex justify-content-between align-items-center">
-            <Form.Select aria-label="Default select example" onChange={handleSelectTechnology}>
-              <option>Elija una tecnología</option>
-              <option value="JavaScript">JavaScript</option>
-              <option value="React">React</option>
-            </Form.Select>
+          <Form>
+            <TypeAnimation
+              sequence={[
+               "Tecnologias", 1000,
+               "T", 1000,
+             ]}
+             wrapper="h3"
+             speed={5}
+             repeat={Infinity}
+            />
+               {['checkbox'].map((type) => (
+              <div key={`default-${type}`} className="mb-3">
+              <Form.Check 
+                type={type}
+                id={`react ${type}`}
+                label={`React`}
+              />
+              <Form.Check
+               type={type}
+               id={`JavaScript${type}`}
+               label={`JavaScript`}
+               />
+            </div>
+           ))}
+         </Form>
+                  
+
           </InputGroup>
           <Form.Label>Nombre del Proyecto</Form.Label>
           <Form.Control
