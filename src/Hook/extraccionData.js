@@ -17,22 +17,15 @@ const ExtraccionData = () => {
         const fetchData = async () => {
             const data = await getCardsData();
             setCardsData(data);
-            console.log("tu vieja va decir algo" , data)
+             console.log("tu vieja va decir algo" , data) 
         };
         fetchData();
     }, []);
 
     return (
         <div className="row">
-            {cardsData.map((cardData) => (
-                <Card 
-                    key={cardData.id} 
-                    descripcion={cardData.descripcion} 
-                    title={cardData.title} 
-                    link={cardData.link}
-                    image={cardData.image}
-                />
-            ))}
+            <Card cards={cardsData}></Card>
+            
         </div>
     );
 };

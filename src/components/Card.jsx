@@ -1,20 +1,28 @@
+import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
- 
+import Carousel from 'react-bootstrap/Carousel';
+
 function Cards(props) {
   return (
-    <div>  
-      <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={props.image} alt="Project Image" />
-        <Card.Body>
-          <Card.Title>{props.title}</Card.Title>
-          <Card.Text>
-            {props.descripcion}
-          </Card.Text>
-          <Button variant="primary" href={props.link}>Go? o no Go?</Button>
-        </Card.Body>
-      </Card>
-    </div>
+    <Carousel>
+      {props.cards.map((card, id) => (
+       <Carousel.Item key={id}>
+          <div style={{ margin: '20px', flexBasis: '300px', flexGrow: 1 }}>  
+            <Card style={{ width: '100%', maxWidth: '300px' }}>
+              <Card.Img variant="top" src={card.image} alt="Project Image" />
+              <Card.Body>
+                <Card.Title>{card.title}</Card.Title>
+                <Card.Text>
+                  {card.descripcion}
+                </Card.Text>
+                <Button variant="primary" href={card.link}>Go? o no Go?</Button>
+              </Card.Body>
+            </Card>
+        </div>
+      </Carousel.Item>
+    ))}
+    </Carousel>     
   );
 }
 

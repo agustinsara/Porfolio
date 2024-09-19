@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Modal from 'react-bootstrap/Modal';
 
+
 function Moodal() {
   const [show, setShow] = useState(false);
   const [projectData, setProjectData] = useState({
@@ -19,6 +20,16 @@ function Moodal() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const handleSelectTechnology = (e) => {
+    const selectoption= e.target.value;
+    setProjectData((prevState) => ({
+      ...prevState,
+      technology: [...prevState.technology, selectoption]
+    }));
+    console.log("Tecnología seleccionada:", selectoption);
+  };
+
+  
   const handleImageChange = async (e) => {
     e.preventDefault();
     const newImage = e.target.files[0];
@@ -33,11 +44,12 @@ function Moodal() {
     }
   };
 
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { title, descripcion, link, image } = projectData;
+    const { title, descripcion, link, image, technology } = projectData;
     const coleccionRef = collection(db, "projects");
-    await setDoc(doc(coleccionRef), { title, descripcion, link, image });
+    await setDoc(doc(coleccionRef), { title, descripcion, link, image, technology });
     alert("Proyecto publicado");
     setProjectData({
       title: '',
@@ -60,11 +72,11 @@ function Moodal() {
         </Modal.Header>
         <Modal.Body>
           <InputGroup className="mb-3 d-flex justify-content-between align-items-center">
-            <h4 className="mb-0">Elija Tipo de Tecnología</h4>
-            <div>
-              <Button variant="outline-secondary" className="me-2">React</Button>
-              <Button variant="outline-secondary">JavaScript</Button>
-            </div>
+            <Form.Select aria-label="Default select example" onChange={handleSelectTechnology}>
+              <option>Elija una tecnología</option>
+              <option value="JavaScript">JavaScript</option>
+              <option value="React">React</option>
+            </Form.Select>
           </InputGroup>
           <Form.Label>Nombre del Proyecto</Form.Label>
           <Form.Control
@@ -81,7 +93,7 @@ function Moodal() {
             value={projectData.link}
             onChange={(e) => setProjectData({ ...projectData, link: e.target.value })}
           />
-          <Form.Group controlId="formFile" className="mb-3">
+          <Form.Group className="mb-3">
             <Form.Label></Form.Label>
             <div className="d-flex">
               <Form.Control type="file" style={{ display: 'none' }} id="upload" onChange={handleImageChange} />
@@ -89,6 +101,9 @@ function Moodal() {
                 Cargar Imagen
               </Button>
             </div>
+            {projectData.image.length > 0 && (
+              <img src={projectData.image[projectData.image.length - 1]} alt="preview" style={{ width: '100px', marginTop: '10px' }} />
+            )}
           </Form.Group>
         </Modal.Body>
         <Modal.Footer>
