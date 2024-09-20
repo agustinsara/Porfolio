@@ -48,9 +48,28 @@ function Moodal() {
   
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { title, descripcion, link, image, technology } = projectData;
+  
+    const reactChecked = document.getElementById('react-checkbox').checked;
+    const jsChecked = document.getElementById('JavaScript-checkbox').checked;
+
+    const selectedTechnologies = [];
+    if (reactChecked) selectedTechnologies.push('React');
+    if (jsChecked) selectedTechnologies.push('JavaScript');
+  
+    if (selectedTechnologies.length === 0) {
+      alert("Selecciona una de todas la que tenes ahi ");
+      return;
+    }
+  
+    const { title, descripcion, link, image } = projectData;
     const coleccionRef = collection(db, "projects");
-    await setDoc(doc(coleccionRef), { title, descripcion, link, image, technology });
+    await setDoc(doc(coleccionRef), { 
+      title, 
+      descripcion, 
+      link, 
+      image, 
+      technology: selectedTechnologies 
+    });
     alert("Proyecto publicado");
     setProjectData({
       title: '',
@@ -60,7 +79,7 @@ function Moodal() {
       technology: [] 
     });
   };
-
+  
   return (
     <>
       <Button variant="dark" size="lg" onClick={handleShow}>
@@ -88,32 +107,25 @@ function Moodal() {
         <Modal.Body>
           <InputGroup className="mb-3 d-flex justify-content-between align-items-center">
           <Form>
-            <TypeAnimation
-              sequence={[
-               "Tecnologias", 1000,
-               "T", 1000,
-             ]}
-             wrapper="h3"
-             speed={5}
-             repeat={Infinity}
-            />
-               {['checkbox'].map((type) => (
-              <div key={`default-${type}`} className="mb-3">
-              <Form.Check 
-                type={type}
-                id={`react ${type}`}
-                label={`React`}
+              <TypeAnimation
+                sequence={["Tecnologías", 1000, "T", 1000]}
+                wrapper="h3"
+                speed={5}
+                repeat={Infinity}
               />
-              <Form.Check
-               type={type}
-               id={`JavaScript${type}`}
-               label={`JavaScript`}
-               />
-            </div>
-           ))}
-         </Form>
-                  
-
+              <div className="mb-3">
+                <Form.Check 
+                  type="checkbox"
+                  id="react-checkbox"
+                  label="React"
+                />
+                <Form.Check
+                  type="checkbox"
+                  id="JavaScript-checkbox"
+                  label="JavaScript"
+                />
+              </div>
+            </Form>
           </InputGroup>
           <Form.Label>Nombre del Proyecto</Form.Label>
           <Form.Control
