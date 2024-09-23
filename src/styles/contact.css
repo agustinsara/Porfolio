@@ -1,0 +1,38 @@
+/* Contenedor que centra el formulario y el título */
+.form-container {
+    margin-top: 100px;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  /* Contenedor interno para centrar el título y el formulario */
+  .content-wrapper {
+    text-align: center;
+  }
+  
+  /* Título del formulario */
+  .form-title {
+    color: white;
+    margin-bottom: 20px; /* Espacio entre el título y el formulario */
+  }
+  
+  /* Contenido del formulario */
+  .form-content {
+    max-width: 500px; /* Limitar el ancho del formulario */
+    width: 100%; /* Asegura que el formulario no se expanda más allá de su contenedor */
+    margin: 0 auto; /* Centra horizontalmente */
+  }
+  
+  /* Estilos personalizados para los controles */
+  .custom-form-group {
+    margin-bottom: 1rem; /* Espaciado entre los grupos de formularios */
+  }
+  
+  .custom-control {
+    padding: 5px; /* Ajustar el padding */
+    font-size: 0.9rem; /* Cambiar el tamaño de la fuente */
+    width: 100%; /* Hace que los inputs ocupen todo el ancho disponible */
+    max-width: 780px; /* Define un ancho máximo opcional */
+  }
+  

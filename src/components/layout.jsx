@@ -3,6 +3,7 @@ import { TypeAnimation } from 'react-type-animation';
 import Proyects from './proyects';
 import Navbaar from '../components/navbar.jsx';
 import '../styles/styles.css'; 
+import Contacto from './Contacto.jsx';
 
 
 function Layout() {
@@ -33,7 +34,7 @@ function Layout() {
       </div>
 
        <Proyects />
-      
+      <Contacto></Contacto>
     </div>
   );
 }

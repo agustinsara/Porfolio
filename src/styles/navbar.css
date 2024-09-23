@@ -1,12 +1,25 @@
 .custom-navbar {
-    font-size: 1.2rem; 
-    padding: 0.8rem 1rem; 
-  }
-  
+  font-size: 1.2rem; 
+  padding: 0.8rem 1rem; 
+  width: 100%; /* Asegúrate de que ocupe toda la pantalla */
+}
+
+.custom-navbar .navbar-brand {
+  font-size: 1.5rem; 
+  text-align: center; /* Alineación centrada */
+}
+
+.custom-navbar .nav-link {
+  margin: 0 1rem; 
+}
+
+/* Asegúrate de que en pantallas pequeñas el navbar se adapte */
+@media (max-width: 768px) {
   .custom-navbar .navbar-brand {
-    font-size: 1.5rem; 
+      margin: auto; /* Centra el nombre en móviles */
   }
-  
+
   .custom-navbar .nav-link {
-    margin: 0 1rem; 
+      margin: 0; /* Ajusta el margen para móviles */
   }
+}
