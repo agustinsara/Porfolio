@@ -1,38 +1,76 @@
 /* Contenedor que centra el formulario y el título */
 .form-container {
-    margin-top: 100px;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+  margin-top: 100px;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Cambié a min-height para que funcione mejor en pantallas más pequeñas */
+}
+
+/* Contenedor interno para centrar el título y el formulario */
+.content-wrapper {
+  text-align: center;
+}
+
+/* Título del formulario */
+.form-title {
+  color: white;
+  margin-bottom: 20px; /* Espacio entre el título y el formulario */
+}
+
+/* Contenido del formulario */
+.form-content {
+  max-width: 500px; /* Limitar el ancho del formulario */
+  width: 100%; /* Asegura que el formulario no se expanda más allá de su contenedor */
+  margin: 0 auto; /* Centra horizontalmente */
+}
+
+/* Estilos personalizados para los controles */
+.custom-form-group {
+  margin-bottom: 1rem; /* Espaciado entre los grupos de formularios */
+}
+
+.custom-control {
+  padding: 10px; /* Ajustar el padding */
+  font-size: 0.9rem; /* Cambiar el tamaño de la fuente */
+  width: 100%; /* Hace que los inputs ocupen todo el ancho disponible */
+  max-width: 780px; /* Define un ancho máximo opcional */
+}
+
+/* Media Queries para hacerlo responsivo */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 768px) {
+  .form-container {
+    margin-top: 50px;
   }
-  
-  /* Contenedor interno para centrar el título y el formulario */
-  .content-wrapper {
-    text-align: center;
-  }
-  
-  /* Título del formulario */
-  .form-title {
-    color: white;
-    margin-bottom: 20px; /* Espacio entre el título y el formulario */
-  }
-  
-  /* Contenido del formulario */
+
   .form-content {
-    max-width: 500px; /* Limitar el ancho del formulario */
-    width: 100%; /* Asegura que el formulario no se expanda más allá de su contenedor */
-    margin: 0 auto; /* Centra horizontalmente */
+    max-width: 900px; /* Ajustar el ancho del formulario en pantallas medianas */
   }
-  
-  /* Estilos personalizados para los controles */
-  .custom-form-group {
-    margin-bottom: 1rem; /* Espaciado entre los grupos de formularios */
-  }
-  
+
   .custom-control {
-    padding: 5px; /* Ajustar el padding */
-    font-size: 0.9rem; /* Cambiar el tamaño de la fuente */
-    width: 100%; /* Hace que los inputs ocupen todo el ancho disponible */
-    max-width: 780px; /* Define un ancho máximo opcional */
+    font-size: 0.85rem; /* Reducir el tamaño de la fuente en pantallas medianas */
+    max-width: 100%; /* Eliminar el ancho máximo para que use todo el espacio disponible */
   }
-  
+}
+
+/* Móviles y pantallas pequeñas */
+@media (max-width: 480px) {
+  .form-container {
+    margin-top: 20px;
+  }
+
+  .form-content {
+    max-width: 100%; /* Ocupa todo el ancho disponible en pantallas pequeñas */
+  }
+
+  .custom-control {
+    padding: 8px; /* Reducir el padding para pantallas pequeñas */
+    font-size: 0.8rem; /* Reducir más el tamaño de la fuente */
+    max-width: 100%; /* Asegura que los inputs ocupen todo el ancho */
+  }
+
+  .form-title {
+    font-size: 1.5rem; /* Ajustar el tamaño del título en pantallas pequeñas */
+  }
+}

@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Modal from 'react-bootstrap/Modal';
 import { TypeAnimation } from 'react-type-animation';
+import Swal from 'sweetalert2'
 
 function Moodal() {
   const [show, setShow] = useState(false);
@@ -70,7 +71,13 @@ function Moodal() {
       image, 
       technology: selectedTechnologies 
     });
-    alert("Proyecto publicado");
+     Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Se cargo re bien todo paa ",
+      showConfirmButton: false,
+      timer: 3500
+     });
     setProjectData({
       title: '',
       descripcion: '',
