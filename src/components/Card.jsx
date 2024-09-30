@@ -9,8 +9,8 @@ function Cards({ cards = [] }) {  // Asignar un valor predeterminado vacío a `c
       {cards.length > 0 ? (
         cards.map((card, id) => (
           <Carousel.Item key={id}>
-            <div style={{ margin: '20px', flexBasis: '400px', flexGrow: 1 }}>  
-              <Card style={{ width: '100%', maxWidth: '400px' }}>
+            <div style={{ margin: '20px', flexBasis: '300px', flexGrow: 1 }}>  
+              <Card style={{ width: '100%', maxWidth: '300px' }}>
                 <Card.Img variant="top" src={card.image} alt="Project Image" />
                 <Card.Body>
                   <Card.Title>{card.title}</Card.Title>
