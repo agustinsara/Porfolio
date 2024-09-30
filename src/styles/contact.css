@@ -3,7 +3,7 @@
   margin-top: 100px;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 65vh;
    /* Cambié a min-height para que funcione mejor en pantallas más pequeñas */
 }
 
