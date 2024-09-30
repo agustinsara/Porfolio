@@ -9,8 +9,8 @@ function Cards({ cards = [] }) {  // Asignar un valor predeterminado vacío a `c
       {cards.length > 0 ? (
         cards.map((card, id) => (
           <Carousel.Item key={id}>
-            <div style={{ margin: '20px', flexBasis: '300px', flexGrow: 1 }}>  
-              <Card style={{ width: '100%', maxWidth: '300px' }}>
+            <div style={{ margin: '20px', flexBasis: '600px', flexGrow: 1 }}>  
+              <Card style={{ width: '100%', maxWidth: '600px' }}>
                 <Card.Img variant="top" src={card.image} alt="Project Image" />
                 <Card.Body>
                   <Card.Title>{card.title}</Card.Title>
@@ -24,15 +24,12 @@ function Cards({ cards = [] }) {  // Asignar un valor predeterminado vacío a `c
           </Carousel.Item>
         ))
       ) : (
-        <Carousel.Item>
-          <div style={{ textAlign: 'center', margin: '20px' }}>
-            <h4>No hay proyectos disponibles</h4>
-          </div>
-        </Carousel.Item>
+        <div style={{ textAlign: 'center', marginTop: '100px' }}>
+          <h4>Cargando...</h4>
+        </div>
       )}
     </Carousel>     
   );
 }
 
 export default Cards;
-

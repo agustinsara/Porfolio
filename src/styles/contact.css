@@ -3,7 +3,8 @@
   margin-top: 100px;
   align-items: center;
   justify-content: center;
-  min-height: 100vh; /* Cambié a min-height para que funcione mejor en pantallas más pequeñas */
+  min-height: 100vh;
+   /* Cambié a min-height para que funcione mejor en pantallas más pequeñas */
 }
 
 /* Contenedor interno para centrar el título y el formulario */

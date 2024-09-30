@@ -8,6 +8,7 @@
     font-weight: 400;
     font-style: normal;
     color: white;
+    margin-top: 60px;
 }
 
 .content {
@@ -17,7 +18,10 @@
     gap: 10px;
     padding: 20px;
 }
-
+.content-text {
+    text-align: left; /* Alinea el texto a la izquierda */
+    
+}
 .content-body {
     display: flex;
     flex-direction: column;
