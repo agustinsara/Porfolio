@@ -71,7 +71,7 @@ function Contacto() {
            placeholder="Nombre" 
            size="sm" 
            className="custom-control"/>
-          {errors.user_name && <p>Se requiere un nombre :) </p>}
+          {errors.user_name && <p>Ingrese un Nombre </p>}
         </Form.Group>
 
         <Form.Group className="mb-2 custom-form-group" controlId="formEmail">
@@ -83,7 +83,7 @@ function Contacto() {
           placeholder="name@example.com" 
           size="sm" 
           className="custom-control" />
-          {errors.user_email?.type === "required" && <p>Necesito que pongas un email, porfa :)</p> }
+          {errors.user_email?.type === "required" && <p>Ingrese un correo</p> }
         </Form.Group>
 
         <Form.Group className="mb-2 custom-form-group" controlId="formPhone">
@@ -95,7 +95,7 @@ function Contacto() {
           name="user_phone"
           size="sm" 
           className="custom-control" />
-          {errors.user_phone && <p>copate poniendo tu numero asi te tiro un mesajito prohibido bb JAjaj</p>}
+          {errors.user_phone && <p>Ingrese un Numero de Telefono</p>}
         </Form.Group>
 
         <Form.Group className="mb-2 custom-form-group" controlId="formQuery">
@@ -108,7 +108,7 @@ function Contacto() {
           rows={3} 
           size="sm" 
           className="custom-control" />
-          {errors.message && <p>pone tu consulta como corresponde lind@</p>}
+          {errors.message && <p>Ingrese un Correo</p>}
         </Form.Group>
 
           <Button
