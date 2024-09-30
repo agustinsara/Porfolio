@@ -58,7 +58,7 @@ function Contacto() {
   
   return (
       
-    <div className="form-container">
+    <div className="form-container" id='contacto'>
     <div className="content-wrapper">
       <h1 className="form-title">Contactame</h1>
       <Form ref= {form} onSubmit={handleSubmit(onSubmit)} className="form-content">

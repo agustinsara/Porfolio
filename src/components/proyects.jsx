@@ -13,7 +13,7 @@ function Proyects() {
   };
 
   return (
-    <div className="proyects-content">
+    <div className="proyects-content" id='proyectos'>
       <div className="title">
         <h1>Proyectos</h1>
       </div>

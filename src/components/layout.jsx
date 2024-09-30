@@ -8,7 +8,7 @@ import Contacto from './Contacto.jsx';
 
 function Layout() {
   return (
-    <div className="layout-container">
+    <div className="layout-container" id='Home'>
      
       <Navbaar />
 
@@ -32,9 +32,12 @@ function Layout() {
           </p>
         </div>
       </div>
-
+      <div style={{ marginTop: '90px' }}>
        <Proyects />
+       </div>
+       <div style={{ marginTop: '100px' }}>
       <Contacto></Contacto>
+      </div>
     </div>
   );
 }

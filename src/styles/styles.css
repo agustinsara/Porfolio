@@ -54,6 +54,7 @@
     font-size: 2rem;
 }
 
+
 @media (max-width: 768px) {
     .content-body {
         grid-column-start: 1;

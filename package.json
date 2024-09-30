@@ -17,6 +17,7 @@
     "react-hook-form": "^7.53.0",
     "react-router-dom": "^6.26.1",
     "react-scripts": "5.0.1",
+    "react-scroll": "^1.9.0",
     "react-type-animation": "^3.2.0",
     "sweetalert2": "^11.14.1",
     "uuidv4": "^6.2.13",
