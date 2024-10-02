@@ -1,18 +1,18 @@
-/* Contenedor que centra el formulario y el título */
+
 .form-container {
   margin-top: 100px;
   align-items: center;
   justify-content: center;
-  min-height: 65vh;
-   /* Cambié a min-height para que funcione mejor en pantallas más pequeñas */
+  min-height: 100vh;
+
 }
 
-/* Contenedor interno para centrar el título y el formulario */
+
 .content-wrapper {
   text-align: center;
 }
 
-/* Título del formulario */
+
 .form-title {
   color: white;
   margin-bottom: 20px; /* Espacio entre el título y el formulario */
@@ -37,9 +37,9 @@
   max-width: 780px; /* Define un ancho máximo opcional */
 }
 
-/* Media Queries para hacerlo responsivo */
 
-/* Tablets y pantallas medianas */
+
+
 @media (max-width: 768px) {
   .form-container {
     margin-top: 50px;
